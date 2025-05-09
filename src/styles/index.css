@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background-light: oklch(92.9% 0.013 255.508);
+  --color-background-dark: oklch(20.8% 0.042 265.755);
+
+  --color-foreground-light: oklch(55.4% 0.046 257.417);
+  --color-foreground-dark: oklch(98.4% 0.003 247.858);
+
+  --transition-duration: 100ms;
+}
+
+@layer base {
+  :root {
+    --background: var(--color-background-light);
+    --foreground: var(--color-foreground-light);
+    --font-sans: "Inter", sans-serif;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    font-family: var(--font-sans); /* ✅ Apply font globally */
+    @apply min-h-screen;
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color var(--transition-duration), color var(--transition-duration);
+  }
+
+  .dark {
+    --background: var(--color-background-dark);
+    --foreground: var(--color-foreground-dark);
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
