@@ -1,4 +1,3 @@
-// Button.tsx
 import { NavLink } from "react-router-dom";
 import React from "react";
 
@@ -7,9 +6,9 @@ type ButtonProps = {
   to?: string;
   className?: string;
   onClick?: () => void;
-};
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const Button: React.FC<ButtonProps> = ({ children, to, className = "", onClick }) => {
+const Button: React.FC<ButtonProps> = ({ children, to, className = "", onClick, type = "button", ...buttonProps }) => {
   const baseClasses =
     "bg-slate-700 hover:bg-slate-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline";
 
@@ -25,7 +24,7 @@ const Button: React.FC<ButtonProps> = ({ children, to, className = "", onClick }
   }
 
   return (
-    <button onClick={onClick} className={`${baseClasses} ${className}`}>
+    <button type={type} onClick={onClick} className={`${baseClasses} ${className}`} {...buttonProps}>
       {children}
     </button>
   );

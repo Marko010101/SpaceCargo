@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "jsx": "react-jsx", // For React 19's JSX transform
+    "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "esnext"],
     "target": "es6",
     "module": "esnext",
@@ -10,7 +10,9 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
-    "types": ["react", "react-dom", "vite/client"] // Add if using Vite
+    "types": ["react", "react-dom", "vite/client"],
+    "allowImportingTsExtensions": true,
+    "noEmit": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
