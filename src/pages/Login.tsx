@@ -26,8 +26,8 @@ const Login = () => {
           />
         </div>
 
-        <div className="absolute left-0 top-0 bottom-0 flex items-center justify-center w-full md:w-1/3 p-4 md:p-8 min-w-80">
-          <div className="p-6 md:p-3 rounded-lg border shadow-sm border-neutral-300 dark:border-neutral-500 w-full max-w-xs dark:bg-neutral-500/90">
+        <div className=" absolute left-0 top-0 bottom-0 flex items-center justify-center w-full md:w-1/3 p-4 md:p-8 min-w-80">
+          <div className=" bg-white/90 p-6 md:p-3 rounded-lg border shadow-sm border-neutral-300 dark:border-neutral-500 w-full max-w-xs dark:bg-neutral-500/90">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-medium mb-6">Login</h2>
               <ThemeToggle />

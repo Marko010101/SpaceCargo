@@ -9,6 +9,7 @@ type AuthContextType = {
   isAuthenticated: boolean;
   isLoading: boolean;
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  signOut: () => void;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -33,8 +34,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setIsLoading(false);
   }, []);
 
+  const signOut = () => {
+    Cookies.remove("authToken");
+    Cookies.remove("authUser");
+    setUser(null);
+  };
+
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated: !!user, isLoading, setUser }}>
+    <AuthContext.Provider value={{ user, isAuthenticated: !!user, isLoading, setUser, signOut }}>
       {children}
     </AuthContext.Provider>
   );

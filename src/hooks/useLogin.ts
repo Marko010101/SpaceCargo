@@ -1,5 +1,5 @@
 import { useMutation } from "@tanstack/react-query";
-import { login } from "../service/auth";
+import { login } from "../service/authApi";
 import toast from "react-hot-toast";
 import { translateErrorMessage } from "../constants/translateErrorMessage";
 import { useAuth } from "../context/AuthContext";

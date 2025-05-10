@@ -1,18 +1,31 @@
+// Button.tsx
+import { NavLink } from "react-router-dom";
 import React from "react";
 
 type ButtonProps = {
   children: React.ReactNode;
-  type?: "button" | "submit" | "reset";
+  to?: string;
   className?: string;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+  onClick?: () => void;
+};
 
-const Button: React.FC<ButtonProps> = ({ children, type = "button", className = "", ...props }) => {
+const Button: React.FC<ButtonProps> = ({ children, to, className = "", onClick }) => {
+  const baseClasses =
+    "bg-slate-700 hover:bg-slate-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline";
+
+  if (to) {
+    return (
+      <NavLink
+        to={to}
+        className={({ isActive }) => `${baseClasses} ${isActive ? "bg-slate-800 dark:bg-slate-900" : ""} ${className}`}
+      >
+        {children}
+      </NavLink>
+    );
+  }
+
   return (
-    <button
-      type={type}
-      className={`bg-slate-700 hover:bg-slate-800 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ${className}`}
-      {...props}
-    >
+    <button onClick={onClick} className={`${baseClasses} ${className}`}>
       {children}
     </button>
   );

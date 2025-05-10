@@ -7,7 +7,7 @@
   --color-background-light: oklch(92.9% 0.013 255.508);
   --color-background-dark: oklch(20.8% 0.042 265.755);
 
-  --color-foreground-light: oklch(55.4% 0.046 257.417);
+  --color-foreground-light: oklch(20.8% 0.042 265.755);
   --color-foreground-dark: oklch(98.4% 0.003 247.858);
 
   --transition-duration: 100ms;

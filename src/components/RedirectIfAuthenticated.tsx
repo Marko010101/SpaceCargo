@@ -13,7 +13,7 @@ function RedirectIfAuthenticated({ children }: RedirectIfAuthenticatedProps) {
 
   useEffect(() => {
     if (isAuthenticated && !isLoading) {
-      navigate("/");
+      navigate("/flights");
     }
   }, [isAuthenticated, isLoading, navigate]);
 

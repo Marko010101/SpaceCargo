@@ -1,10 +1,14 @@
 import { Outlet } from "react-router-dom";
+import Header from "./Header";
 
 function AppLayout() {
   return (
-    <main>
-      <Outlet />
-    </main>
+    <>
+      <Header />
+      <main className="max-w-7xl mx-auto p-4">
+        <Outlet />
+      </main>
+    </>
   );
 }
 

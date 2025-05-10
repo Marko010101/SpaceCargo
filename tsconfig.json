@@ -1,7 +1,17 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "compilerOptions": {
+    "jsx": "react-jsx", // For React 19's JSX transform
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "es6",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "types": ["react", "react-dom", "vite/client"] // Add if using Vite
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
