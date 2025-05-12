@@ -42,7 +42,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         className="text-sm sm:text-md p-1 sm:px-4 sm:py-2 bg-inherit rounded-full flex items-center justify-center gap-1 hover:bg-cyan-700 hover:text-slate-200 dark:hover:bg-cyan-800 disabled:cursor-not-allowed"
       >
         <ArrowLeft size={18} />
-        <span className="hidden sm:inline">Prev</span> {/* Hide text on small screens */}
+        <span className="hidden sm:inline">Prev</span>
       </button>
 
       {pageNumbers.map((page, index) =>
@@ -73,7 +73,7 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, totalPages, onPage
         disabled={currentPage === totalPages}
         className="text-sm sm:text-md p-1 sm:px-4 sm:py-2 bg-inherit rounded-full flex items-center justify-center gap-1 hover:bg-cyan-700 hover:text-slate-200 dark:hover:bg-cyan-800 disabled:cursor-not-allowed"
       >
-        <span className="hidden sm:inline">Next</span> {/* Hide text on small screens */}
+        <span className="hidden sm:inline">Next</span>
         <ArrowRight size={18} />
       </button>
     </div>
