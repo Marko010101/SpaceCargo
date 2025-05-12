@@ -20,3 +20,21 @@ export type FlightsResponse = {
   perPage: number;
   flights: Flight[];
 };
+
+export interface FlightRequest {
+  flightNumber: string;
+  flightDate: string;
+  fromCountryId?: number;
+  fromCityId?: number;
+  toCountryId?: number;
+  toCityId?: number;
+}
+
+export interface FlightUpdateRequest extends FlightRequest {
+  id: number;
+}
+
+export interface ApiResponse {
+  type: "success" | "error";
+  message: string;
+}

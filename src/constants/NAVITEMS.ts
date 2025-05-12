@@ -4,7 +4,24 @@ type navigationTypes = {
 };
 
 export const NAVITEMS: navigationTypes[] = [
-  { name: "Flights", path: "/flights" },
-  { name: "Cities", path: "/cities" },
-  { name: "Countries", path: "/countries" },
+  {
+    name: "Flights",
+    path: "/flights",
+  },
+  {
+    name: "Users",
+    path: "/users",
+  },
+  {
+    name: "Dashboard",
+    path: "/dashboard",
+  },
+  {
+    name: "Reports",
+    path: "/reports",
+  },
+  {
+    name: "Settings",
+    path: "/settings",
+  },
 ];

@@ -1,12 +1,13 @@
-import { useQuery } from "@tanstack/react-query";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import toast from "react-hot-toast";
 import { translateErrorMessage } from "../constants/translateErrorMessage";
 import { getFlights } from "../service/flightsApi";
 
-export const useFlights = () => {
-  const { data, isLoading, error } = useQuery({
-    queryKey: ["flights"],
-    queryFn: getFlights,
+export const useFlights = (currentPage: number, perPage: number) => {
+  const { data, isLoading, error, isFetching, isPlaceholderData } = useQuery({
+    queryKey: ["flights", currentPage, perPage],
+    queryFn: () => getFlights(currentPage, perPage),
+    placeholderData: keepPreviousData,
   });
 
   if (error) {
@@ -14,5 +15,5 @@ export const useFlights = () => {
     toast.error(errorMessage);
   }
 
-  return { data, isLoading, error };
+  return { data, isLoading, error, isFetching, isPlaceholderData };
 };

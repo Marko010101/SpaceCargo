@@ -4,19 +4,19 @@ import { ThemeToggle } from "../components/ThemeToggle";
 import Button from "../components/ui/Button";
 import { useLogin } from "../hooks/useLogin";
 import Input from "../components/ui/Input";
+import Loader from "../components/ui/Loader";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { mutate, isPending } = useLogin();
-
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     mutate({ email, password });
   };
 
   return (
-    <div className="flex justify-center items-center h-screen p-4 min-h-96">
+    <div className="flex  justify-center sm:p-4 items-center h-screen w-full min-h-96">
       <div className="relative flex shadow-lg rounded-lg overflow-hidden w-full max-w-6xl">
         <div className="w-full">
           <img
@@ -26,7 +26,7 @@ const Login = () => {
           />
         </div>
 
-        <div className=" absolute left-0 top-0 bottom-0 flex items-center justify-center w-full md:w-1/3 p-4 md:p-8 min-w-80">
+        <div className=" absolute left-0 top-0 bottom-0 flex items-center justify-center w-full md:w-1/3  sm:p-8 sm:min-w-80">
           <div className=" bg-white/90 p-6 md:p-3 rounded-lg border shadow-sm border-neutral-300 dark:border-neutral-500 w-full max-w-xs dark:bg-neutral-500/90">
             <div className="flex items-center justify-between">
               <h2 className="text-2xl font-medium mb-6">Login</h2>
@@ -70,7 +70,7 @@ const Login = () => {
                     isPending ? "cursor-not-allowed" : ""
                   } bg-blue-500 text-white rounded hover:bg-blue-600`}
                 >
-                  {isPending ? "Logging in..." : "Login"}
+                  {isPending ? <Loader size="md" /> : "Login"}
                 </Button>
               </div>
             </form>

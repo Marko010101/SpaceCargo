@@ -1,11 +1,13 @@
+import Loader from "../components/ui/Loader";
 import ProfileItem from "../components/ui/ProfileItem";
 import { useAuth } from "../context/AuthContext";
 
 const Profile = () => {
-  const { user } = useAuth();
+  const { user, isLoading } = useAuth();
 
+  if (isLoading) return <Loader />;
   if (!user) return <div className="p-6 text-lg">No user data available.</div>;
-
+  console.log(user);
   const {
     firstNameGe,
     lastNameGe,
