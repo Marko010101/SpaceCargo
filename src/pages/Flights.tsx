@@ -64,7 +64,7 @@ const Flights = () => {
         currentPage={currentPage}
         totalPages={totalPages}
         onPageChange={handlePageChange}
-        range={isSmOrLarger ? 4 : 2}
+        range={isSmOrLarger ? 3 : 2}
       />
 
       {flightToEdit && (

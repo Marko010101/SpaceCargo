@@ -7,7 +7,6 @@ const Profile = () => {
 
   if (isLoading) return <Loader />;
   if (!user) return <div className="p-6 text-lg">No user data available.</div>;
-  console.log(user);
   const {
     firstNameGe,
     lastNameGe,

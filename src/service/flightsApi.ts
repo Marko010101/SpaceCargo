@@ -39,7 +39,6 @@ export const createFlight = async (flight: FlightRequest): Promise<ApiResponse> 
 
 export const deleteFlight = async (id: number): Promise<ApiResponse> => {
   const token = Cookies.get("authToken");
-  console.log("id", id);
   const response = await fetch(`${BASE_URL}/admin/flight/delete_flight`, {
     method: "POST",
     headers: {

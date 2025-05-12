@@ -13,7 +13,6 @@ type FlightsCardProps = {
 const FlightsCard = ({ flight, isPlaceholderData }: FlightsCardProps) => {
   const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
   const navigate = useNavigate();
-  // console.log(flight);
   const {
     flightNumber,
     flightDate,

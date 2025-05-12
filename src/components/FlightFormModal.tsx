@@ -142,7 +142,7 @@ const FlightFormModal = ({ onClose, initialData }: FlightFormModalProps) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 bg-black/40 flex items-center justify-center">
+    <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center">
       <div ref={ref} className="bg-slate-50 dark:bg-slate-800 p-6 rounded-2xl shadow-xl w-full max-w-max relative">
         <button className="absolute top-3 right-3" onClick={onClose}>
           <X />
