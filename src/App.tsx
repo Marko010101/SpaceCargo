@@ -16,6 +16,7 @@ const Users = lazy(() => import("./pages/Users"));
 const Dashboard = lazy(() => import("./pages/Dashboard"));
 const Reports = lazy(() => import("./pages/Reports"));
 const Settings = lazy(() => import("./pages/Settings"));
+const PageNotFound = lazy(() => import("./pages/PageNotFound"));
 
 function App() {
   const queryClient = new QueryClient();
@@ -43,6 +44,7 @@ function App() {
                 <Route path="/reports" element={<Reports />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="*" element={<PageNotFound />} />
               </Route>
 
               <Route
